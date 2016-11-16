@@ -12,10 +12,9 @@
  */
 var removeElements = function(head, val) {
     if(head === null || val === null) return head;
-    var dummyNode = new ListNode();
+    var dummyNode = new ListNode(0);
     var node = dummyNode;
-    
-    dummyNode.next = head;
+    node.next = head;
     
     while (node.next) {
         if (node.next.val === val) {
