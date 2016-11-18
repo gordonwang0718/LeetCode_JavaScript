@@ -1,4 +1,12 @@
 
+     head
+===>   1  --->   2   --->   3   --->   4   --->   5   --->   6   --->   null
+ org oHead     eHead
+     oTail     eTail
+                node
+===> while(node && node.next)
+===>   1  --->   2   --->   3   --->   4   --->   5   --->   6   --->   null
+     oHead     
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -26,7 +34,7 @@ var oddEvenList = function(head) {
         evenTail.next = node.next.next;
         oddTail = oddTail.next;
         evenTail = evenTail.next;
-        node = oddTail.next;
+        node = node.next;
     }
     
     oddTail.next = evenHead;
