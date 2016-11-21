@@ -21,18 +21,46 @@
  * @return {ListNode}
  */
 
- // Solution 1: Iteration
-
-
-
-
- // Solution 1: Recursion (122ms)
-Diagram:
+ // Solution 1: Tail Recursion
+ Diagram:
 (head ==> 1, k ==> 3)
   org    head    head.next
 ======>   1   ===>   2   ===>   3   ===>   4   ===>    5    ===>   null
  i = 0    cur
 -----------------------------------------------------------------------
+
+var reverseKGroup = function(head, k) {
+    var chkHead = checkHead(head, k);
+    if(chkHead === null) return head;
+    var newHead = reverseKGroup(chkHead.next, k);
+    var pre = head;
+    var cur = head.next;
+    var next;
+    while(k > 1) {
+        next = cur.next;
+        cur.next = pre;
+        pre = cur;
+        cur = next;
+        k--;
+    }
+    head.next = newHead;
+    return pre;
+    
+    function checkHead(head, k) {
+        if(head === null || k < 1) return head;
+        while(k > 1) {
+            k--;
+            head = head.next;
+            if(head === null) return head;
+        }
+        return head;
+    }
+};
+
+
+
+ // Solution 2: Iteration(Head Recursion) (122ms)
+v
   org    head    head.next
 ======>   1   ===>   2   ===>   3   ===>   4   ===>    5    ===>   null
  i = 1              cur

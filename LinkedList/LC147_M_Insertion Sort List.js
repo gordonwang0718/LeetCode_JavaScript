@@ -79,14 +79,14 @@ pre    cur ----------------------
  * @return {ListNode}
  */
 var insertionSortList = function(head) {
-    var sortedListHead = new ListNode(0),
-        pre = sortedList,
+    var dummy = new ListNode(0),
+        pre = dummy,
         cur = head,
         next;
         
     while(cur !== null) {
         next = cur.next;
-        pre = sortedList;
+        pre = dummy;
         
         while (pre.next && pre.next.val <= cur.val) {
             pre = pre.next;
@@ -97,5 +97,5 @@ var insertionSortList = function(head) {
         cur = next;
     }
     
-    return sortedList.next;
+    return dummy.next;
 };
