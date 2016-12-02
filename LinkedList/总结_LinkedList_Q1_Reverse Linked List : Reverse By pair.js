@@ -165,5 +165,37 @@ var swapPairs = function(head) {
     return newHead;
 };
 
+// reverse Linked List by K group
+
+var reverseKGroup = function(head, k) {
+    var checkHead = check(head, k);
+
+    if(checkHead === null) return head;
+    var newHead = reverseKGroup(checkHead.next, k);
+    var pre = head,
+        cur = head.next.next;
+
+    while(k > 1) {
+        next = cur.next;
+        cur.next = pre;
+        pre = cur;
+        cur = next;
+        k--;
+    }
+
+    head.next = newHead;
+    return pre;
+
+    function check(head, k) {
+        if(head === null || k <= 1) return head;
+        while(k > 1) {
+            k--;
+            head = head.next;
+            if(head === null) return head;
+        } // 1 -> 3 -> 4 k = 3
+        return head;
+    }
+}
+
 
 

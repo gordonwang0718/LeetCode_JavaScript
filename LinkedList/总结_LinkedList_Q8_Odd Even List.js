@@ -42,3 +42,20 @@ var oddEvenList = function(head) {
     return oddHead;
 
 };
+
+// Delete Odd node in LinkedList
+public class LongestCommonSubstring {
+    public ListNode deleteOdd(ListNode head) {
+        if(head == null || head.next == null) return null;
+        ListNode newHead = head.next;
+        ListNode cur = newHead;
+        head.next = null; 
+        while (cur != null && cur.next != null) {
+            ListNode temp = cur.next;
+            cur.next = cur.next.next; 
+            temp.next = null; 
+            cur = cur.next;
+        }
+    return newHead;
+    }
+}

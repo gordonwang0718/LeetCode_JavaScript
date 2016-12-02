@@ -1,5 +1,5 @@
 // Solution 1:
-// Extra O(n) space: reverse the whole linked list and pari merge
+// Extra O(n) space: reverse the whole linked list and pair merge
 
 // Solution 2:
 // In place without alter nodes' value
@@ -109,7 +109,7 @@ function merge(head1, head2) {
     var node = dummy;
     
     while(head1 && head2) {
-        if(index & 2 === 0) {
+        if(index % 2 === 0) {
             node.next = head1;
             head1 = head1.next;
         } else {

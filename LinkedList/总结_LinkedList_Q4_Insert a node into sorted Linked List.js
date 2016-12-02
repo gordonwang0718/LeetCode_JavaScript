@@ -6,22 +6,32 @@
  * }
  */
 
-
-var insert = function(head, val) {
-
-	var newNode = new ListNode(val);
-
-	if(head === null || head.val >= val) {
+// S1: With Dummy Node
+var insertNode = function(head, target) {
+	var newNode = new ListNode(target);
+	var dummy = new ListNode(0);
+	var pre = dummy;
+	    pre.next = head;
+	var next;
+	while(pre.next && pre.next.val <= target) {
+		pre = pre.next;
+	}
+	pre.next = newNode;
+	newNode.next = cur;
+	return dummy.next;
+}
+// S2: Without Dummy Node
+var insertNode = function(head, target) {
+	var newNode = new ListNode(target);
+	if(head === null || head.val >= target) {
 		newNode.next = head;
 		return newNode;
 	}
-
-	var prev = head;
-	while(prev.next !== null && prev.next.val < val) {
-		prev = prev.next;
+	var pre = head;
+	while(pre.next && pre.next.val <= target.val) {
+		pre = pre.next;
 	}
-
-	newNode.next = prev.next;
-	prev.next = newNode;
+	newNode.next = pre.next;
+	pre.next = newNode;
 	return head;
 }
