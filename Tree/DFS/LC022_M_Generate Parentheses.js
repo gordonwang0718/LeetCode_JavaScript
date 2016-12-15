@@ -12,7 +12,7 @@ var generateParenthesis = function(n) {
     function helper(n, left, right, result, sb) {
         
         // base case 1;
-        if(left + right === 2*n) {
+        if(left + right === 2 * n) {
             result.push(sb.join(""));
             return;
         }

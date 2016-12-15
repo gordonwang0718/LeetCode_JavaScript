@@ -65,6 +65,8 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
+ 
+//从上向下，从左到右
 var levelOrder = function(root) {
     var result = [];
     if(root === null) return result;

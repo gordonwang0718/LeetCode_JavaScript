@@ -60,7 +60,7 @@ Diagram:
        prev       curr                             
 ========================================================
  2nd                         next
- 	 curr.next    prev       curr
+ 	 curr.next    prev         curr
 ========================================================
  3rd                                    next
                 curr.next    prev       curr 

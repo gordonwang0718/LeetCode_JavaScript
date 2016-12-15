@@ -66,13 +66,13 @@ var generateParenthesis = function(n) {
         // case 1: try to add left;
         if(left < n) {
             sb.push('(');
-            helper(n, left + 1, right, result, sb);
+            helper(n, left + 1, right, result, sb.concat());
             sb.pop();
         }
         // case 2: try to add right;
         if(right < left) {
             sb.push(')');
-            helper(n, left, right + 1, result, sb);
+            helper(n, left, right + 1, result, sb.concat());
             sb.pop();
         }
         
