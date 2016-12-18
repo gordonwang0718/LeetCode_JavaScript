@@ -1,6 +1,6 @@
-Same as Q1 & Q2
+/*Same as Q1 & Q2
 
-Java solution
+Java solution*/
 
 O(logN)complexity:
 public class Solution extends GuessGame {

@@ -1,3 +1,5 @@
+/*TYPE 1*/
+
 /*LC 34 Search for a Range*/  (Conner Case 考虑不全)
 var searchRange = function(nums, target) {
     var result = [];

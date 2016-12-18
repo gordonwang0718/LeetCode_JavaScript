@@ -1,3 +1,5 @@
+/*TYPE 1*/
+
 /*Q1 Find Peak Element*/
 
 /*Solution 1: NlogN*/

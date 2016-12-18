@@ -1,3 +1,5 @@
+/*TYPE 1*/
+
 /*Q1 Closest Position of Target*/
 
 var closestPosition = function(nums, target) {

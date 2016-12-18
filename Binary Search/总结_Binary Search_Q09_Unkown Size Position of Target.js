@@ -1,3 +1,5 @@
+/*TYPE 3*/
+
 ====> xxxxxxxxxxxxxxxxxxxxxxxxxTxxxxxxxxxxxxxxxxxxxx...
 
 ====> SE

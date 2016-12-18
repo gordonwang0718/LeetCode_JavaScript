@@ -1,3 +1,6 @@
+/*TYPE 2*/
+
+
 /*Q1 LC33 Search in Rotated Sorted Array*/
 
 var search = function(nums, target) {

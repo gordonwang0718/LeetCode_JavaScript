@@ -1,3 +1,5 @@
+/*TYPE 2*/
+
 var smallestLarger = function(nums, target) {
 	if(nums === null || nums.length === 0) return -1;
 	var left = 0, right = nums.length - 1, mid = 0;

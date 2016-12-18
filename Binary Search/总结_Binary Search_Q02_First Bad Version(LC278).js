@@ -1,3 +1,4 @@
+/*TYPE 1*/
 /**
  * Definition for isBadVersion()
  * 

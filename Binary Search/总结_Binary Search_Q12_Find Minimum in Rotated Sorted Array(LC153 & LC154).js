@@ -1,3 +1,5 @@
+/*TYPE 1*/
+
 /**
  * @param {number[]} nums
  * @return {number}
