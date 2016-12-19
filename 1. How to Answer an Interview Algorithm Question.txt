@@ -1,0 +1,11 @@
+1. Clarify the situation of Question!!!
+2. Approach: Explain how and why choose solution accordingly.
+3. Function Signature: input / output / helper reference to pass through
+4. Assumption: Corner case / Edge case / Base case
+		Java: Stack overflow: recursion 中经常发成，没有 return 条件
+			   Heap overflow: Memory Leak -> Heap 满了
+5. Comment(关键位置) + Code + Review(Create test case by self -> null, !null, 1 element，avg)
+6. Time Complexity and Justify (Intuitive or Formula)
+		Time Complexity: 随着输入的 size，运行变化的趋势
+	   Space Complexity: 运行程序额外的空间(extra data Structure)
+7. Space Complexity Data Structure Selection and Justify

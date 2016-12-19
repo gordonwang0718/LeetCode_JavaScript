@@ -1,0 +1,26 @@
+1. Most popular data Structure
+	-> Linear:
+  		实际存在的线性数据结构:
+			1. Array: (连续存储) Binary Search, Sorting, Two Pointer, String to Char[]/charAt/Slow fast pointer, DP
+			2. LinkedList: (非连续存储) DummyNode解决List(Not recommend)
+        抽象的线性数据结构：
+			1. Queue: FIFO(First In), BFS, Level Order Traversal -> PriorityQueue(Heap), 
+			2. Stack: FILO, DFS, pre/in/post order traversal in tree, iterator, recursion -> iteration(Stack)(While), 单调序列
+	-> Non-Linear:
+		1. HashMap: 非线性存储(Key-value pair)，HashSet(只有Key), O(1) get(key), HashCode, collision, load factor
+		2. Heap: 非线性逻辑结构(Logical tree)，线性存储结构(array), Order(堆序性), complete, parent/left child/right child, PriorityQueue BFS
+		3. Tree: any order traversal, recursion, iteration, divide & conquer, TreeNode(改写TreeNode)
+		4. Graph: BFS(有环-> visited + heap) vs. DFS(有环-> visited + Graph Node), BFS -> Dijistra’s Algorithm(LC286 walls and gates)
+	-> Other
+		Trie + Segment Tree + B + red black Tree + interval	
+
+2. Most popular approach
+	-> Primitive
+	-> Recursion
+	-> Dynamic Programming
+	-> Iteration
+	-> Two Pointer
+	-> DFS
+	-> BFS
+	-> Dijikstra
+	-> Divide & Conquer
