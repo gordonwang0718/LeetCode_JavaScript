@@ -1,16 +1,5 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-
-// Solution 1: Dummy Node (109ms)
+/*Q1: Reverse Linked List*/
+/*Solution 1: Dummy Node (109ms)*/
 Diagram:
                      head
 ====>   dummy   ===>   1   ===>   2   ===>   3   ===>   4   ===>   null
@@ -50,7 +39,7 @@ var reverseList = function(head) {
     
 };
 
-// Solution 2: Iteration (95ms)
+/*Solution 2: Iteration (95ms)*/
 Diagram:
        head
 ====>   1   ===>   2   ===>   3   ===>   4   ===>   null
@@ -84,7 +73,7 @@ var reverseList = function(head) {
     return prev;
 };
 
-// Solution 3: Recursion (119ms)
+/*Solution 3: Recursion (119ms)*/
 Diagram:
 
  org   head    head.next
@@ -114,59 +103,48 @@ Diagram:
 
 var reverseList = function(head) {
     if(head === null || head.next === null) return head;
-
     var newHead = reverseList(head.next);
-    head.next.next = head;
+    head.next.next = head; 
     head.next = null;
     return newHead;
 };
 
 
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-
-Diagram:
-
- org    head      head.next   head.next.next
-====>    1    ====>    2    ====>    3    ====>    4    ====>   null
- 1st    head      head.next   head.next.next
-====>    3    ====>    4    ====>   null
- 2nd    head      head.next   head.next.next
-====>   null  ====>  null   ====>   null
-=========================================================
- 4th    head      head.next   head.next.next
-====>    3    <====    4            null               null  <-  3  <-  4 
-         ==========================>
-                    newHead       subHead
- 5th    head      head.next   head.next.next
-====>    1    <====    2             3    ====>    4    <====   null  
-         ===========================>           
-                    newHead       subHead                                                                                                  
+/*Q2: SWAP by pair*/
 
 // O(n)
 var swapPairs = function(head) {
     if(head === null || head.next === null) return head;
     var subHead = swapPairs(head.next.next);
-    
-    head.next.next = head;
-    
-    var newHead = head.next;
-    head.next = subHead;
-    
+    head.next.next = head;   // 2.next -> head <1>, 断开<2>与<3>的 reference
+    var newHead = head.next; // newHead -> 2
+    head.next = subHead;     // 2 -> 1 -> subHead;
     return newHead;
 };
 
-// reverse Linked List by K group
+var swapPairs = function(head) {
+    if(head === null || head.next === null) return head;
+    
+    var preHead = null;
+    var pre = head;
+    var cur = head;
+    var next = null;
+    head = head.next;
+    
+    while(pre !== null && pre.next !== null) {
+        cur = pre.next;
+        next = cur.next;
+        cur.next = pre;
+        if(preHead !== null) preHead.next = cur; // keep a prehead to connect
+        preHead = pre;
+        pre = next;
+    }
+    preHead.next = pre;
+    return head;
+};
 
+
+/*Q3: reverse Linked List by K group*/
 var reverseKGroup = function(head, k) {
     var checkHead = check(head, k);
 

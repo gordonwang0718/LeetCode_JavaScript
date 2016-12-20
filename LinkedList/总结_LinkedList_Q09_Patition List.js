@@ -1,4 +1,29 @@
- 
+/*Solution 1*/
+
+var partition = function(head, x) {
+    if(head === null || head.next === null) return head;
+    
+    var small = new ListNode(0);
+    var big   = new ListNode(0);
+    var curSmall = small;
+    var curBig   = big;
+    
+    while(head !== null) {
+        if(head.val < x) {
+            curSmall.next = head;
+            curSmall = curSmall.next;
+        } else {
+            curBig.next = head;
+            curBig = curBig.next;
+        }
+        head = head.next;
+    }
+    curSmall.next = big.next;
+    curBig.next = null;
+    return small.next;
+};
+
+/*Solution 2*/ 
  ====>   x = 3;
          head
  ====>    1   --->   4   --->   3   --->   2   --->   5   --->   2   --->   null

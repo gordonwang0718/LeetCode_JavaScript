@@ -13,7 +13,8 @@ var findMiddle = function(head) {
 	if(head === null || head.next === null) return head;
 	var slow = head;
 	var fast = head;
-	while(fast.next !== null && fast.next.next !== null) {
+	while(fast.next !== null && fast.next.next !== null) { // 每次移一步，判断终止条件为一个，每次移两步，判断终止条件为两个，每次移N步，判断终止条件为 N 个
+
 		slow = slow.next;
 		fast = fast.next.next;
 	}
@@ -34,3 +35,5 @@ var findMiddle = function(head) {
 	}
 	return slow;
 }
+
+// S3: ⅓, fast走三步,(分母代表 fast 走的步数，分子代表 slow 走的步数)

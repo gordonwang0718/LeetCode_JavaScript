@@ -74,55 +74,59 @@ var reorderList = function(head) {
 };
 
 // Solution 2:
+
 var reorderList = function(head) {
     if(head === null || head.next === null) return;
-    var midHead = findMiddle(head);
-    var tail = reverse(midHead);
-    midHead.next = null;
-    merge(head, tail);
-}；
-
-function findMiddle(head) {
-    var slow = head;
-    var fast = head;
-    while(fast && fast.next) {
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return slow;
-}
     
-function reverse(head) {
-    var newHead = new ListNode(0);
-    while(head) {
-        var tmp = head.next;
-        head.next = newHead;
-        newHead = head;
-        head = tmp;
-    }
-    return newHead;
-}
+    var mid = findMiddle(head);
+    var left = head;
+    var right = mid.next;
+    mid.next === null;
+    merge(left, reverse(right));
     
-function merge(head1, head2) {
-    var index = 0;
-    var dummy = new ListNode(0);
-    var node = dummy;
     
-    while(head1 && head2) {
-        if(index % 2 === 0) {
-            node.next = head1;
-            head1 = head1.next;
-        } else {
-            node.next = head2;
-            head2 = head2.next;
+    function findMiddle(head) {
+        if(head === null || head.next === null) return head;
+        var slow = head;
+        var fast = head;
+        while(fast.next && fast.next.next) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        node = node.next;
-        index++;
+        return slow;
     }
-        
-    if(head1) {
-        node.next = head1;
-    } else {
-        node.next = head2;
+    
+    function reverse(head) {
+        if(head === null || head.next === null) return head;
+        // var newHead = reverse(head.next);
+        // head.next.next = head;
+        // head.next = null;
+        // return newHead;
+        var pre = null;
+        var cur = head;
+        var next = null;
+        while(cur !== null) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
     }
-}
+    
+    function merge(left, right) {
+        var dummy = new ListNode(0);
+        var cur = dummy;
+        var l1 = left, l2 = right;
+        while(l1 !== null && l2 !== null) {
+            cur.next = l1;
+            l1 = l1.next;
+            cur = cur.next;
+            cur.next = l2;
+            l2 = l2.next;
+            cur = cur.next;
+        }
+        if(l1) cur.next = l1;
+        return dummy.next;
+    }
+};
