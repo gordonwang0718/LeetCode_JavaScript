@@ -1,5 +1,4 @@
-// LC 102 Binary Tree Level Order Traversal
-
+/*LC102 Binary Tree Level Order Traversal*/
 ====> [3,9,20,null,null,15,7]
 ====> [
         [3],
@@ -92,8 +91,7 @@ var levelOrder = function(root) {
     return result;
 };
 
-// LC 107 Binary Tree Level Order Traversal 2
-
+/*LC 107 Binary Tree Level Order Traversal 2*/
 ===>  [3,9,20,null,null,15,7]
 
 ===> parent.push(root) ===> parent = [3];
@@ -134,18 +132,6 @@ var levelOrder = function(root) {
      parent = current ===> parent = [];
 
 ===> return result [[15, 7],[9, 20],[3]];
-
-/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number[][]}
- */
 
 var levelOrderBottom = function(root) {
     var result = [];
